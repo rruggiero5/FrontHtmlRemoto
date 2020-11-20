@@ -24,7 +24,10 @@ function logar() {
     fetch("http://localhost:8080/login", cabecalho)
         .then(res => res.json())
         .then(res => {
-            window.alert(res.nome);
+            // comando para testar se está funcionando até aqui
+            //  window.alert(res.nome);
+            localStorage.setItem("logado", JSON.stringify(res));
+            window.location = "usuario.html";
         })
         .catch(err => {
             window.alert("Deu ruim");
