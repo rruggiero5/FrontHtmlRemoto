@@ -1,3 +1,22 @@
+
+
+function carregarusuario() {
+    var usuariologado = localStorage.getItem("logado");
+    if (usuariologado == null) {
+        window.location = "login.html";
+    } else {
+        var usuariojson = JSON.parse(usuariologado);
+        document.getElementById("foto").innerHTML =
+            "<img width='25%' heigh='25%' alt='Foto não encontrada' src=imagens/" + usuariojson.foto + ">";
+
+        document.getElementById("dados").innerHTML =
+            "<h3>" + usuariojson.nome + "<br>" + usuariojson.email + "<br>ID:" + usuariojson.id + "<br></h3>";
+
+    }
+
+}
+
+
 function logar() {
 
     // para testar se a função está funcionando:
